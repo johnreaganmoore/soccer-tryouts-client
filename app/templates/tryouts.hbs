@@ -39,7 +39,9 @@
   {{#each model as |tryout|}}
     <div class="tryout">
       <div class="league-logo">
-        <img src="{{tryout.leagueLogo}}" alt="League Logo">
+        {{#link-to "leagues"}}
+          <img src="{{tryout.leagueLogo}}" alt="League Logo">
+        {{/link-to}}
       </div>
 
       <div class="team-logo">
