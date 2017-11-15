@@ -10,5 +10,6 @@ export default DS.Model.extend({
   region: DS.attr(),
   fee: DS.attr('number'),
   registration: DS.attr(),
-  startDate: DS.attr()
+  startDate: DS.attr(),
+  team: DS.belongsTo('team', { inverse: 'tryouts' })
 });

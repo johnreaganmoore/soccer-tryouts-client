@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('tryouts');
+  this.route('teams');
   this.route('leagues');
   this.route('about');
 });

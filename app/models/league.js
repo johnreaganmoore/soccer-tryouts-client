@@ -8,4 +8,5 @@ export default DS.Model.extend({
   indoor: DS.attr('boolean'),
   seasonStart: DS.attr(),
   seasonEnd: DS.attr(),
+  teams: DS.hasMany('team')
 });
