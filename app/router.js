@@ -7,9 +7,25 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('tryouts');
-  this.route('teams');
-  this.route('leagues');
+
+  this.route('tryouts', function() {
+    this.route('show', { path: '/:id' });
+    this.route('edit', { path: '/:id/edit' });
+    this.route('create', { path: '/create' });
+  });
+
+  this.route('teams', function() {
+    this.route('show', { path: '/:id' });
+    this.route('edit', { path: '/:id/edit' });
+    this.route('create', { path: '/create' });
+  });
+
+  this.route('leagues', function() {
+    this.route('show', { path: '/:id' });
+    this.route('edit', { path: '/:id/edit' });
+    this.route('create', { path: '/create' });
+  });
+
   this.route('about');
 });
 

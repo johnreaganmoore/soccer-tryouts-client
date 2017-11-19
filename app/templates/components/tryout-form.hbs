@@ -1,0 +1,15 @@
+{{#do-form tryout submit=(action 'submitTryout') as |form|}}
+
+  {{form.input-field 'label' controlType='text' label='Label' hint='e.g. USL East Coast Combine'}}
+  {{form.input-field 'startDate' controlType='date' label='Start Date'}}
+  {{form.input-field 'endDate' controlType='date' label='End Date'}}
+  {{form.input-field 'locality' controlType='text' label='City'}}
+  {{form.input-field 'region' controlType='text' label='State'}}
+  {{form.input-field 'registration' controlType='text' label='Information URL'}}
+  {{form.input-field 'info' controlType='text' label='Registration URL'}}
+  {{form.input-field 'fee' controlType='number' label='Fee'}}
+  {{form.input-field 'team_id' controlType='number' label='Team ID'}}
+
+
+  <button type='submit'>Save</button>
+{{/do-form}}

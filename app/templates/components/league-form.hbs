@@ -1,0 +1,12 @@
+{{#do-form league submit=(action 'submitLeague') as |form|}}
+
+  {{form.input-field 'name' controlType='text' label='Name'}}
+  {{form.input-field 'logo' controlType='text' label='Logo'}}
+  {{form.input-field 'website' controlType='text' label='Website'}}
+  {{form.input-field 'level' controlType='text' label='Level'}}
+  {{form.input-field 'seasonStart' controlType='text' label='Season Start'}}
+  {{form.input-field 'seasonEnd' controlType='text' label='Season End'}}
+
+
+  <button type='submit'>Save</button>
+{{/do-form}}

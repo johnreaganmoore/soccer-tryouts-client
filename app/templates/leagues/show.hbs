@@ -1,0 +1,20 @@
+<div class="tryout-list-container">
+  <div class="tryout">
+    <div class="team-logo">
+      <img src="{{model.logo}}" alt="{{model.name}} Logo">
+    </div>
+    <div class="tryout-content">
+      <h3>{{model.name}}</h3>
+      <div>
+        <!-- In the future add conditional logic. Cash for pro leagues heart for amateur. and add and the word indoor after the level if an indoor league. -->
+        💵 {{model.level}}
+      </div>
+      <div class="dates">
+        📆 {{model.seasonStart}} <span>through</span> {{model.seasonEnd}}
+      </div>
+      <div class="location">
+        🔗 <a href="{{model.website}}">Website</a>
+      </div>
+    </div>
+  </div>
+</div>

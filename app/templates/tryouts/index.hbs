@@ -1,0 +1,36 @@
+<div class="tryout-list-container">
+  {{#each model as |tryout|}}
+    <div class="tryout">
+      <div class="league-logo">
+        {{#link-to "leagues"}}
+          <img src="{{tryout.team.league.logo}}" alt="League Logo">
+        {{/link-to}}
+      </div>
+
+      <div class="team-logo">
+        <img src="{{tryout.team.logo}}" alt="{{tryout.team.name}} Logo">
+      </div>
+      <div class="tryout-content">
+        <!-- <h3>{{tryout.teamName}}</h3> -->
+        <h3>{{tryout.team.name}}</h3>
+        <div class="dates">
+          📆 &nbsp;&nbsp;{{moment-format tryout.startDate 'MMMM Do'}} <span>through</span> {{moment-format tryout.endDate 'MMMM Do'}}
+        </div>
+        <div class="location">
+          🗺 &nbsp;&nbsp;{{tryout.locality}}, {{tryout.region}}
+        </div>
+        <div>
+          💵 &nbsp;&nbsp;{{format-currency tryout.fee}}
+        </div>
+        <div>
+          ℹ️ &nbsp;&nbsp;<a href="{{tryout.info}}">Details</a>
+        </div>
+        <div>
+          ✍️ &nbsp;&nbsp;<a href="{{tryout.registration}}">Register</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+
+{{outlet}}

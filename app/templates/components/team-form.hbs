@@ -1,0 +1,15 @@
+{{#do-form team submit=(action 'submitTeam') as |form|}}
+
+  {{form.input-field 'name' controlType='text' label='Name'}}
+  {{form.input-field 'logo' controlType='text' label='Logo'}}
+  {{form.input-field 'website' controlType='text' label='Website'}}
+  {{form.input-field 'address_1' controlType='text' label='Address Line 1'}}
+  {{form.input-field 'address_2' controlType='text' label='Address Line 2'}}
+  {{form.input-field 'locality' controlType='text' label='City'}}
+  {{form.input-field 'region' controlType='text' label='State'}}
+  {{form.input-field 'zip' controlType='text' label='Zip'}}
+  {{form.input-field 'league_id' controlType='number' label='League ID'}}
+
+
+  <button type='submit'>Save</button>
+{{/do-form}}
