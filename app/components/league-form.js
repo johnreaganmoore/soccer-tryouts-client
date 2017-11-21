@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   website: "",
   indoor: "",
   seasonStart: "",
-  seasonEnd: "",
+  seasonEnd: ""
 
 
   actions: {
@@ -21,7 +21,6 @@ export default Ember.Component.extend({
       const indoor = this.get('league.indoor');
       const seasonStart = this.get('league.seasonStart');
       const seasonEnd = this.get('league.seasonEnd');
-      const league = this.get('league.league_id');
 
       if (name) {
 
@@ -33,7 +32,6 @@ export default Ember.Component.extend({
           indoor,
           seasonStart,
           seasonEnd,
-          league
         });
       }
     }
