@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   website: "",
   indoor: "",
   seasonStart: "",
-  seasonEnd: ""
+  seasonEnd: "",
 
 
   actions: {
