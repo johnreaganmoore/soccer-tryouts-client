@@ -9,8 +9,8 @@ export default  DS.JSONAPIAdapter.extend({
   // // this can be helpful for development.
   // // in production, the host for both rails and ember should be the same.
   // host: ENV.host,
-  host: 'https://soccer-tryouts-api.herokuapp.com',
-  // host: 'http://localhost:3000',
+  // host: 'https://soccer-tryouts-api.herokuapp.com',
+  host: 'http://localhost:3000',
 
   // allows the multiword paths in urls to be underscored
   pathForType: function(type) {

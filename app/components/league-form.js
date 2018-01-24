@@ -13,6 +13,11 @@ export default Ember.Component.extend({
 
   actions: {
 
+    imageUploadComplete: function(details) {
+      this.get('league').set('logo', details["fullUrl"])
+    },
+
+
     submitLeague() {
       const name = this.get('league.name');
       const logo = this.get('league.logo');

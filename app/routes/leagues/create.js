@@ -6,7 +6,6 @@ export default Ember.Route.extend({
   },
 
   actions: {
-
     createLeague(leagueObject) {
 
       var self = this;
@@ -17,7 +16,7 @@ export default Ember.Route.extend({
       }).catch(function(reason) {
         console.log(reason)
       });
-      
+
     }
   }
 });

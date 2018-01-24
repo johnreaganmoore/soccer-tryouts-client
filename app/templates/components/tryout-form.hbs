@@ -8,7 +8,13 @@
   {{form.input-field 'registration' controlType='text' label='Information URL'}}
   {{form.input-field 'info' controlType='text' label='Registration URL'}}
   {{form.input-field 'fee' controlType='number' label='Fee'}}
-  {{form.input-field 'team_id' controlType='number' label='Team ID'}}
+
+    <select required name="team" onchange={{action "setTeam" value="target.value"}}>
+      <option disabled selected> -- Choose Team -- </option>
+      {{#each teams as |team|}}
+         <option value={{team.id}}>{{team.name}}</option>
+      {{/each}}
+    </select>
 
 
   <button type='submit'>Save</button>

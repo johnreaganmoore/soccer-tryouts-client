@@ -2,7 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model() {
-    return this.store.createRecord('tryout', {});
+    // return this.store.createRecord('team', {});
+    return Ember.RSVP.hash({
+      newTryout: this.store.createRecord('tryout', {}),
+      teams: this.store.findAll('team')
+    });
+  },
+
+  setupController(controller, models) {
+    controller.set('newTryout', models.newTryout);
+    controller.set('teams', models.teams);
+    // or, more concisely:
+    // controller.setProperties(models);
   },
 
   actions: {

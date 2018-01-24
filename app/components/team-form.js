@@ -10,8 +10,17 @@ export default Ember.Component.extend({
   locality: "",
   region: "",
   zip: "",
+  league_id: "",
 
   actions: {
+
+    setLeague: function(selected) {
+      this.set('league_id', selected)
+    },
+
+    imageUploadComplete: function(details) {
+      this.get('team').set('logo', details["fullUrl"])
+    },
 
     submitTeam() {
       const name = this.get('team.name');
@@ -22,7 +31,7 @@ export default Ember.Component.extend({
       const locality = this.get('team.locality');
       const region = this.get('team.region');
       const zip = this.get('team.zip');
-      const league = this.get('team.league_id');
+      const league = this.get('league_id')
 
       if (name) {
 

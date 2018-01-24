@@ -1,7 +1,10 @@
 {{#do-form league submit=(action 'submitLeague') as |form|}}
 
   {{form.input-field 'name' controlType='text' label='Name'}}
-  {{form.input-field 'logo' controlType='text' label='Logo'}}
+
+  {{form.hidden-field 'logo' controlType='text' label='Logo'}}
+  Logo {{s3-upload onComplete="imageUploadComplete" label='Logo'}}
+
   {{form.input-field 'website' controlType='text' label='Website'}}
   {{form.input-field 'level' controlType='text' label='Level'}}
   {{form.input-field 'seasonStart' controlType='text' label='Season Start'}}

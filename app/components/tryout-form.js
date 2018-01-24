@@ -10,8 +10,13 @@ export default Ember.Component.extend({
   endDate: "",
   locality: "",
   region: "",
+  team_id: "",
 
   actions: {
+
+    setTeam: function(selected) {
+      this.set('team_id', selected)
+    },
 
     submitTryout() {
       const label = this.get('tryout.label');
@@ -22,7 +27,7 @@ export default Ember.Component.extend({
       const region = this.get('tryout.region');
       const registration = this.get('tryout.registration');
       const info = this.get('tryout.info');
-      const team = this.get('tryout.team_id');
+      const team = this.get('team_id');
 
       if (label) {
 
