@@ -1,8 +1,23 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  model(params) {
-    return this.store.findRecord('team', params.id);
+  // model(params) {
+  //   return this.store.findRecord('team', params.id);
+  // },
+
+  model() {
+    // return this.store.createRecord('team', {});
+    return Ember.RSVP.hash({
+      team: this.store.findRecord('team', params.id),
+      leagues: this.store.findAll('league')
+    });
+  },
+
+  setupController(controller, models) {
+    controller.set('team', models.team);
+    controller.set('leagues', models.leagues);
+    // or, more concisely:
+    // controller.setProperties(models);
   },
 
   actions: {
