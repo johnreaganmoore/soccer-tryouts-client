@@ -3,7 +3,7 @@ import EmberUploader from 'ember-uploader';
 import config from '../config/environment';
 
 export default EmberUploader.FileField.extend({
-  signingUrl: `http://localhost:3000/sign`,
+  signingUrl: `https://soccer-tryouts-api.herokuapp.com/sign`,
   onComplete: 'onComplete',
   filesDidChange (files) {
     const uploader = EmberUploader.S3Uploader.create({
