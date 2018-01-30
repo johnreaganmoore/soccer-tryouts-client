@@ -8,17 +8,17 @@
         <h3>{{league.name}}</h3>
         <div>
           <!-- In the future add conditional logic. Cash for pro leagues heart for amateur. and add and the word indoor after the level if an indoor league. -->
-          {{#if league.level === "Professional"}}
+          {{#if league.isPro}}
             💵 &nbsp;&nbsp;{{league.level}}
           {{else}}
             ❤️ &nbsp;&nbsp;{{league.level}}
           {{/if}}
         </div>
         <div class="dates">
-          📆 {{league.seasonStart}} <span>through</span> {{league.seasonEnd}}
+          📆 &nbsp;&nbsp;{{league.seasonStart}} <span>through</span> {{league.seasonEnd}}
         </div>
         <div class="location">
-          🔗 <a href="{{league.website}}">Website</a>
+          🔗 &nbsp;&nbsp;<a href="{{league.website}}">Website</a>
         </div>
       </div>
     </div>

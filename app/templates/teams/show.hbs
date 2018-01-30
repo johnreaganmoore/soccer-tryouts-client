@@ -11,7 +11,7 @@
     <h3>{{model.name}}</h3>
     <div>
       <!-- In the future add conditional logic. Cash for pro leagues heart for amateur. and add and the word indoor after the level if an indoor league. -->
-      {{#if model.league.level === "Professional"}}
+      {{#if model.league.isPro}}
         💵 &nbsp;&nbsp;{{model.league.level}}
       {{else}}
         ❤️ &nbsp;&nbsp;{{model.league.level}}
