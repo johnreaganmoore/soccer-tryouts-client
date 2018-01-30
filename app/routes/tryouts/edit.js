@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   //   return this.store.findRecord('tryout', params.id);
   // },
 
-  model() {
+  model(params) {
     return Ember.RSVP.hash({
       tryout: this.store.findRecord('tryout', params.id),
       teams: this.store.findAll('team')

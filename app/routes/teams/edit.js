@@ -5,7 +5,7 @@ export default Ember.Route.extend({
   //   return this.store.findRecord('team', params.id);
   // },
 
-  model() {
+  model(params) {
     // return this.store.createRecord('team', {});
     return Ember.RSVP.hash({
       team: this.store.findRecord('team', params.id),
