@@ -25,7 +25,8 @@ export default Ember.Route.extend({
     updateTeam(teamObject) {
 
       var self = this;
-      const team = this.modelFor(this.routeName)
+      const model = this.modelFor(this.routeName)
+      const team = model.team
       let league = this.store.findRecord('league', teamObject.league).then(function(league) {
 
         team.setProperties({
