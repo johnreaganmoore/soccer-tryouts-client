@@ -24,7 +24,8 @@ export default Ember.Route.extend({
     updateTryout(tryoutObject) {
 
       var self = this;
-      const tryout = this.modelFor(this.routeName)
+      const model = this.modelFor(this.routeName)
+      const tryout = model.tryout
       let team = this.store.findRecord('team', tryoutObject.team).then(function(team) {
 
         tryout.setProperties({
