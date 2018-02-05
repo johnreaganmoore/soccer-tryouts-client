@@ -8,6 +8,8 @@ export default DS.Model.extend({
   locality: DS.attr(),
   region: DS.attr(),
   zip: DS.attr(),
+  latitude: DS.attr(),
+  longitude: DS.attr(),
   website: DS.attr(),
   league: DS.belongsTo('league', { inverse: 'teams' }),
   tryouts: DS.hasMany('tryout')

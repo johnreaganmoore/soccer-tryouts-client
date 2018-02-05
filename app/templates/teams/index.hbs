@@ -1,5 +1,7 @@
+{{team-map teams=teams}}
 <div class="tryout-list-container">
-  {{#each model as |team|}}
+  {{#each teams as |team|}}
+
     <div class="tryout">
       <div class="league-logo">
         {{#link-to "leagues"}}
