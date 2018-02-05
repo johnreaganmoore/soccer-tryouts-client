@@ -44,16 +44,13 @@ export default Ember.Route.extend({
         team.save().then(function() {
           self.transitionTo('teams');
         }).catch(function(reason) {
-          console.log(reason)
+          alert(reason)
         });
 
       });
     },
 
     delete(team) {
-
-      console.log(team)
-
       this.store.findRecord('team', team.id, { backgroundReload: false }).then(function(team) {
         team.destroyRecord();
       });
