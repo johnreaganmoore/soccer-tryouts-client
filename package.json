@@ -38,6 +38,7 @@
     "ember-one-way-controls": "^3.0.1",
     "ember-resolver": "^2.0.3",
     "ember-route-action-helper": "^2.0.6",
+    "ember-simple-google-maps": "^1.0.0",
     "ember-source": "~2.12.0",
     "ember-uploader": "^1.2.3",
     "ember-welcome-page": "^2.0.2",
