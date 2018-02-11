@@ -6,7 +6,6 @@ export default Ember.Component.extend({
   didInsertElement() {
     this._super(...arguments);
     let teams = this.get('teams');
-    console.log(teams)
 
     let mapElement = this.get('maps').getMapElement(teams);
     this.$('#team-map').append(mapElement);
