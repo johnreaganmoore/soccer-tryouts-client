@@ -398,16 +398,16 @@ export default Ember.Object.extend({
           icon: "assets/markers/USL-marker.png"
         },
         6: {
-          icon: "assets/markers/UPSL-marker.png"
+          icon: "assets/markers/CPL-marker.png"
         },
         3: {
           icon: "assets/markers/NPSL-marker.png"
         },
         5: {
-          icon: "assets/markers/PDL-marker.png"
+          icon: "assets/markers/UPSL-marker.png"
         },
         4: {
-          icon: "assets/markers/CPL-marker.png"
+          icon: "assets/markers/PDL-marker.png"
         },
         none: {
           icon: "assets/markers/stuckin-marker.png"
