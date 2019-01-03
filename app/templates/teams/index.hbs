@@ -12,7 +12,9 @@
         <img src="{{team.logo}}" alt="{{team.name}} Logo">
       </div>
       <div class="tryout-content">
-        <h3>{{team.name}}</h3>
+        {{#link-to "teams.show" team}}
+          <h3>{{team.name}}</h3>
+        {{/link-to}}
         <div>
           <!-- In the future add conditional logic. Cash for pro leagues heart for amateur. and add and the word indoor after the level if an indoor league. -->
           {{#if team.league.isPro}}
