@@ -3,7 +3,10 @@
   {{form.input-field 'name' controlType='text' label='Name'}}
 
   {{form.hidden-field 'logo' controlType='text' label='Logo'}}
-  Logo {{s3-upload onComplete="imageUploadComplete" label='Logo'}}
+  Logo {{s3-upload onComplete="logoUploadComplete" label='Logo'}}
+
+  {{form.hidden-field 'markerIcon' controlType='text' label='Marker Icon'}}
+  Marker Icon {{s3-upload onComplete="markerIconUploadComplete" label='Marker Icon'}}
 
   {{form.input-field 'website' controlType='text' label='Website'}}
   {{form.input-field 'level' controlType='text' label='Level'}}
