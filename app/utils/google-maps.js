@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import MarkerClusterer from './markerclusterer'
 
 const google = window.google;
 
@@ -323,7 +324,6 @@ export default Ember.Object.extend({
   }
 ]
 
-
     let us_center = {lat: 40.2628241, lng: -102.1233218};
     let map = new google.maps.Map(document.getElementById('team-map'), {
       zoom: 4,
@@ -331,14 +331,20 @@ export default Ember.Object.extend({
       styles: styleObject
     });
 
-    console.log(teams)
+    let markers = this.pinLocation(teams, map);
 
-    this.pinLocation(teams, map);
+      // Add a marker clusterer to manage the markers.
+    let clusterer = MarkerClusterer(map, markers,
+      {imagePath: '/public/assets/markers/clusters'}
+    );
+
     return map;
   },
 
 
   pinLocation(teams, map) {
+
+    let markers = []
 
     teams.forEach(function(team){
 
@@ -363,21 +369,15 @@ export default Ember.Object.extend({
       var address2line = '';
       var levelLine = '';
 
-      console.log(league)
-      console.log(leagueLevel)
-      console.log(leagueIsPro)
-
       if (leagueIsPro) {
         levelLine = '💵 &nbsp;&nbsp;'+ leagueLevel;
       } else {
         levelLine = '❤️ &nbsp;&nbsp;'+ leagueLevel;
       }
 
-
       if (teamAddress2 !== null && typeof(teamAddress2) !== 'undefined' && teamAddress2 !== '' ) {
         address2line =  '<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' + teamAddress2 + '</div>';
       }
-
 
       var leagueId = 'none';
 
@@ -390,40 +390,15 @@ export default Ember.Object.extend({
         lng: longitude
       };
 
-      var icons = {
-        1: {
-          icon: "assets/markers/MLS-marker.png"
-        },
-        2: {
-          icon: "assets/markers/USL-marker.png"
-        },
-        6: {
-          icon: "assets/markers/CPL-marker.png"
-        },
-        3: {
-          icon: "assets/markers/NPSL-marker.png"
-        },
-        5: {
-          icon: "assets/markers/UPSL-marker.png"
-        },
-        4: {
-          icon: "assets/markers/PDL-marker.png"
-        },
-        none: {
-          icon: "assets/markers/stuckin-marker.png"
-        }
+      var icon = {
+        url: league.get('logo'),
+        scaledSize: new google.maps.Size(30, 30)
       };
-
-      var icon = icons[leagueId].icon;
 
       var marker = new google.maps.Marker({ position, map, title: teamName, icon: icon });
 
       var contentString =
           '<div class="map-team">'+
-            // '<div class="map-team-logo">'+
-            //   '<img src="'+ teamLogo + '" alt="' + teamName + ' Logo">'+
-            // '</div>'+
-
             '<div class="tryout-content">'+
               '<a href="teams/'+ teamId + '"><h3>' + teamName + '</h3></a>'+
               '<div>'+ levelLine + '</div>'+
@@ -439,7 +414,6 @@ export default Ember.Object.extend({
           '</div>';
 
 
-
       var infowindow = new google.maps.InfoWindow({
         content: contentString
       });
@@ -447,6 +421,8 @@ export default Ember.Object.extend({
       marker.addListener('click', function() {
         infowindow.open(map, marker);
       });
+
+      markers.push(marker)
 
     });
 
