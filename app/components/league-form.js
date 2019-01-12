@@ -4,6 +4,7 @@ export default Ember.Component.extend({
 
   name: "",
   logo: "",
+  markerIcon: "",
   level: "",
   website: "",
   indoor: "",
@@ -13,10 +14,13 @@ export default Ember.Component.extend({
 
   actions: {
 
-    imageUploadComplete: function(details) {
+    logoUploadComplete: function(details) {
       this.get('league').set('logo', details["fullUrl"])
     },
 
+    markerIconUploadComplete: function(details) {
+      this.get('league').set('markerIcon', details["fullUrl"])
+    },
 
     submitLeague() {
       const name = this.get('league.name');
