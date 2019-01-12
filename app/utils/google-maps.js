@@ -392,7 +392,7 @@ export default Ember.Object.extend({
 
       var icon = {
         url: league.get('markerIcon'),
-        scaledSize: new google.maps.Size(30, 30)
+        scaledSize: new google.maps.Size(20, 32)
       };
 
       var marker = new google.maps.Marker({ position, map, title: teamName, icon: icon });
